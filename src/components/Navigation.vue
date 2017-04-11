@@ -15,6 +15,7 @@
               <a>Projects</a>
             </router-link>
           </ul>
+
         </div>
 
         <ul class="side-nav" id="mobile-nav">
@@ -26,7 +27,6 @@
           </router-link>
         </ul>
       </div>
-
     </nav>
   </div>
 </template>
@@ -45,6 +45,8 @@ export default {
 </script>
 
 
-<style scoped>
-
+<style>
+  #sidenav-overlay {
+    z-index: 1;
+  }
 </style>
