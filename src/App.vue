@@ -5,7 +5,7 @@
       <app-navigation/>
 
       <div class="section row blue accent-5">
-        <div class="col offset-s4 s4">
+        <div class="col offset-s4 s4 m2 offset-m5">
           <img src="./assets/me.jpg" alt="" class="circle responsive-img">
         </div>
       </div>
