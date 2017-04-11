@@ -28,6 +28,7 @@
 import 'materialize-css/dist/css/materialize.css'
 import 'materialize-css/dist/js/materialize.js'
 import 'font-awesome/css/font-awesome.css'
+import 'animate.css'
 
 import AppNavigation from '@/components/Navigation'
 import AppFooter from '@/components/Footer'
