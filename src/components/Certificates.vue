@@ -1,0 +1,34 @@
+<template>
+  <div>
+    <div>
+      <h3>Certificates</h3>
+    </div>
+
+    <div class="row" v-for="(c, index) in certificates">
+      <div class="col s3">
+        {{ c.date | date('%Y') }}
+
+      </div>
+      <div class="col s9">
+        <strong>{{ c.name }}:</strong>
+        <span>{{ c.description }}</span>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import { mapState } from 'vuex'
+
+export default {
+  name: 'app-certificates',
+  computed: {
+    ...mapState(['certificates'])
+  }
+}
+</script>
+
+
+<style scoped>
+
+</style>

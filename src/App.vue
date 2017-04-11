@@ -1,23 +1,47 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+
+    <header>
+      <app-navigation/>
+    </header>
+    
+    
+    <main>
+      <div class="container">
+        <router-view/>
+      </div>
+    </main>
+
+    <app-footer/>
+    
   </div>
 </template>
 
 <script>
+import 'materialize-css/dist/css/materialize.css'
+import 'materialize-css/dist/js/materialize.js'
+import 'font-awesome/css/font-awesome.css'
+
+import AppNavigation from '@/components/Navigation'
+import AppFooter from '@/components/Footer'
+import AppWorkExperience from '@/components/WorkExperience'
+import AppEducationalBackground from '@/components/EducationalBackground'
+import AppCertificates from '@/components/Certificates'
+import AppAdditionalSkills from '@/components/AdditionalSkills'
+
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    AppNavigation,
+    AppFooter,
+    AppWorkExperience,
+    AppEducationalBackground,
+    AppCertificates,
+    AppAdditionalSkills
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
