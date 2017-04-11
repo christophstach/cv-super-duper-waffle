@@ -5,10 +5,10 @@
     </div>
 
     <div class="row" v-for="(a, index) in additionalSkills">
-      <div class="col s3">
+      <div class="col s12 m3">
         {{ a.category }}
       </div>
-      <div class="col s9">
+      <div class="col s12 m9">
         <ul v-if="a.items && a.items.length">
           <li v-for="(item, index) in a.items">{{ item.name }} ({{ item.level }})</li>
         </ul>

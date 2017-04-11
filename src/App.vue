@@ -3,17 +3,24 @@
 
     <header>
       <app-navigation/>
+
+      <div class="section row blue accent-5">
+        <div class="col offset-s4 s4">
+          <img src="./assets/me.jpg" alt="" class="circle responsive-img">
+        </div>
+      </div>
     </header>
-    
-    
+
     <main>
-      <div class="container">
-        <router-view/>
+      <div class="section">
+        <div class="container">
+          <router-view/>
+        </div>
       </div>
     </main>
 
     <app-footer/>
-    
+
   </div>
 </template>
 

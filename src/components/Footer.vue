@@ -1,6 +1,6 @@
 <template>
-  <footer class="page-footer">
-    
+  <footer class="page-footer blue darken-3">
+
     <div class="footer-copyright">
       <div class="container">
       © 2017 Christoph Stach

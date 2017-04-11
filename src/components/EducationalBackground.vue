@@ -5,7 +5,7 @@
     </div>
 
     <div class="row" v-for="(e, index) in educationalBackground">
-      <div class="col s3">
+      <div class="col s12 m3">
         <strong>
           <span>{{ e.startDate | date('%Y/%m') }}</span>
           <span v-if="e.endDate"> - </span>
@@ -13,7 +13,7 @@
           <span v-if="e.endDate instanceof Date">{{ e.endDate | date('%Y/%m') }}</span>
         </strong>
       </div>
-      <div class="col s9">
+      <div class="col s12 m9">
         <span>{{ e.name }}, {{ e.location }}</span><span v-if="e.programm">: </span>
         <span v-if="e.programm">{{ e.programm }}</span>
       </div>

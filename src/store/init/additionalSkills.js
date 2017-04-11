@@ -22,7 +22,7 @@ export default [
       {
         category: 'Frontend',
         items: [
-          'Angularjs', 'Angular', 'ReactJS + Redux',
+          'AngularJS', 'Angular', 'ReactJS + Redux',
           'Vue.js + Vuex', 'Bootstrap 3 & 4', 'Sencha ExtJS',
           'HTML5, JavaScript, CSS3', 'jQuery', 'Less', 'Sass'
         ]

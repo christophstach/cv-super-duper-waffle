@@ -18,6 +18,12 @@ module.exports = merge(baseWebpackConfig, {
   // cheap-module-eval-source-map is faster for development
   devtool: '#cheap-module-eval-source-map',
   plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      'window.$': 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+    }),
     new webpack.DefinePlugin({
       'process.env': config.dev.env
     }),
