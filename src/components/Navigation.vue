@@ -6,7 +6,7 @@
 
         <div class="container">
           <router-link to="/" class="brand-logo">
-            <i class="fa fa-code" aria-hidden="true"></i>
+            <i class="fa fa-code nav-logo" aria-hidden="true"></i>
             Christoph Stach
           </router-link>
 
@@ -57,6 +57,12 @@ export default {
 <style>
   #sidenav-overlay {
     z-index: 1;
+  }
+
+  .brand-logo > .nav-logo {
+    float: none;
+    margin: 0;
+    display: inline;
   }
 
   .side-nav-logo-wrapper {
