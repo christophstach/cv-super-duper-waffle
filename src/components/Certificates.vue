@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <div>
-      <h3>Certificates</h3>
-    </div>
+  <div class="app-certificates">
+    <h3>Certificates</h3>
 
     <div class="row" v-for="(c, index) in certificates">
       <div class="col s12 m3">

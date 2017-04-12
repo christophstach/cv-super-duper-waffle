@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar-fixed">
+  <div class="navbar-fixed app-navigation">
     <nav class="blue darken-3 navbar-fixed">
       <div class="nav-wrapper">
         <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>

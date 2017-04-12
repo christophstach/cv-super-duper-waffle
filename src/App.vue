@@ -4,18 +4,16 @@
     <header>
       <app-navigation/>
 
-      <div class="section row blue accent-5">
-        <div class="col offset-s4 s4 m2 offset-m5">
-          <img src="./assets/me.jpg" alt="" class="circle responsive-img">
+      <div class="row blue accent-5">
+        <div class="col offset-s4 s4 m2 offset-m5 profile-picture-wrapper">
+          <img src="./assets/me.jpg" alt="Profile" class="circle responsive-img profile-picture">
         </div>
       </div>
     </header>
 
     <main>
-      <div class="section">
-        <div class="container">
-          <router-view/>
-        </div>
+      <div class="container">
+        <router-view/>
       </div>
     </main>
 
@@ -50,6 +48,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  .profile-picture {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
 </style>

@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <div>
-      <h3>Additional skills</h3>
-    </div>
+  <div class="app-additional-skills">
+    <h3>Additional skills</h3>
 
     <div class="row" v-for="(a, index) in additionalSkills">
       <div class="col s12 m3">

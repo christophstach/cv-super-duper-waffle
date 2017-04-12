@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-work-experience">
     <h3>Work experience</h3>
 
     <div class="row" v-for="(w, index) in workExperience">

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-home">
     <app-work-experience/>
     <div class="divider"></div>
 

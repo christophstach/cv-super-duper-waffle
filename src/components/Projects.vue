@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-projects">
 
     <transition
       v-if="repos.length === 0"
@@ -33,6 +33,13 @@
 
       <div key="table">
         <h3>My Projects on GitHub</h3>
+
+        <p>
+          Here I am showing some projects I worked on recently.
+          These projects can give you an impression with which technologies I work so far.
+          The reason for the weird names is, that I'm using a random project generator to make project names
+          more distinct and fun &#x1F609;.
+        </p>
 
         <table class="striped">
           <thead>

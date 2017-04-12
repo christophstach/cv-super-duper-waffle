@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <div>
-      <h3>Educational background</h3>
-    </div>
+  <div class="app-educational-background">
+    <h3>Educational background</h3>
 
     <div class="row" v-for="(e, index) in educationalBackground">
       <div class="col s12 m3">
