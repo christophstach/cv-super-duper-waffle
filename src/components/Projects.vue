@@ -59,7 +59,7 @@
                   <td>{{ repo.description }}</td>
                   <td>{{ repo.updated_at | date('%Y/%m/%d') }} </td>
                   <td>
-                    <a :href="repo.html_url"><i class="material-icons">code</i></a>
+                    <a :href="repo.html_url" title="See code"><i class="material-icons">code</i></a>
                   </td>
                 </tr>
               </tbody>
