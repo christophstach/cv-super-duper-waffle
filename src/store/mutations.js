@@ -8,9 +8,10 @@ const mutations = {
     ]
   },
   API_FAILURE (state, data) {
-    state.apiFailure = {
-      ...data
-    }
+    state.apiFailure = [
+      ...state.apiFailure,
+      data
+    ]
   }
 }
 

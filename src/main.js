@@ -4,9 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
-import filter from 'vue-filter'
+import VueFilter from 'vue-filter'
+import VeeValidate from 'vee-validate'
 
-Vue.use(filter)
+Vue.use(VueFilter)
+Vue.use(VeeValidate)
 
 Vue.config.productionTip = false
 

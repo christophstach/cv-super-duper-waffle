@@ -1,15 +1,23 @@
 <template>
   <div class="app-home">
-    <app-work-experience/>
-    <div class="divider"></div>
 
-    <app-educational-background/>
-    <div class="divider"></div>
+    <div class="row">
+      <div class="col s12">
 
-    <app-certificates/>
-    <div class="divider"></div>
+        <app-work-experience/>
+        <div class="divider"></div>
 
-    <app-additional-skills/>
+        <app-educational-background/>
+        <div class="divider"></div>
+
+        <app-certificates/>
+        <div class="divider"></div>
+
+        <app-additional-skills/>
+
+      </div>
+    </div>
+
   </div>
 </template>
 

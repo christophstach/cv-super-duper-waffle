@@ -6,7 +6,7 @@ export default [
     startDate: new Date(2016, 11),
     endDate: 'present',
     responsibilities: [
-      'Extending the exting frontend of a web based software based on AngularJS',
+      'Extending the existing frontend of a web based software based on AngularJS',
       'Developing a PHP Symfony framework middleware to connect the AngularJS frontend with the systems core REST API'
     ]
   },
