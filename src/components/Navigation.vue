@@ -47,7 +47,9 @@ export default {
   name: 'app-navigation',
   created () {
     $(document).ready(() => {
-      $('.button-collapse').sideNav()
+      $('.button-collapse').sideNav({
+        closeOnClick: true
+      })
     })
   }
 }
@@ -62,7 +64,6 @@ export default {
   .brand-logo > .nav-logo {
     float: none;
     margin: 0;
-    display: inline;
   }
 
   .side-nav-logo-wrapper {
