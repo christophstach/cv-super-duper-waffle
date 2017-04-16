@@ -43,10 +43,14 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   .profile-picture {
     display: block;
     margin-top: 15px;
     margin-bottom: 15px;
+  }
+
+  [v-cloak] {
+    display: none;
   }
 </style>
