@@ -17,9 +17,6 @@
             <router-link tag="li" active-class="active" to="/projects" exact>
               <a>Projects</a>
             </router-link>
-            <!--<router-link tag="li" active-class="active" to="/contact" exact>
-              <a>Contact</a>
-            </router-link>-->
           </ul>
 
         </div>
@@ -37,9 +34,6 @@
           <router-link tag="li" active-class="active" to="/projects" exact>
             <a>Projects</a>
           </router-link>
-          <!--<router-link tag="li" active-class="active" to="/contact" exact>
-            <a>Contact</a>
-          </router-link>-->
 
         </ul>
       </div>

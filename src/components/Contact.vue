@@ -91,10 +91,10 @@ export default {
   },
   data () {
     return {
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
+      name: 'Chris',
+      email: 'a@b.de',
+      subject: 'Test mail vom Forumular',
+      message: 'Lalalalalal'
     }
   },
   computed: {
