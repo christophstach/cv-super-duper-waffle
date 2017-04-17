@@ -8,14 +8,14 @@ export default [
   },
   {
     name: 'KBS Nordhorn',
-    programm: ' IT Management Assistent',
+    programm: 'IT Management Assistent',
     location: 'Nordhorn, Germany',
     startDate: new Date(2009, 8),
     endDate: new Date(2011, 6)
   },
   {
     name: 'Berufskolleg Rheine',
-    programm: 'Informations Technischer Assistent',
+    programm: 'Information Technology Assistant',
     location: 'Rheine, Germany',
     startDate: new Date(2004, 8),
     endDate: new Date(2008, 6)
