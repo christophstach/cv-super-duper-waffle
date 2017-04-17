@@ -58,7 +58,7 @@ export default {
 
 
 <style>
-  #sidenav-overlay {
+  body > #sidenav-overlay {
     z-index: 1;
   }
 
