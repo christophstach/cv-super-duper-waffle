@@ -1,6 +1,6 @@
 export default [
   {
-    name: 'Hochschule für Technik & Wirtschaft',
+    name: 'Hochschule für Technik & Wirtschaft (University of Applied Sciences)',
     programm: 'Applied computer science',
     location: 'Berlin, Germany',
     startDate: new Date(2016, 4),
