@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import VueAnalytics from 'vue-ua'
+import VueAnalytics from 'vue-analytics'
 import Home from '@/components/Home'
 import Projects from '@/components/Projects'
 
@@ -13,19 +13,17 @@ const router = new Router({
       component: Home
     },
     {
-      path: '/projects',
+      path: '/projects/',
       name: 'Projects',
       component: Projects
     }
   ]
 })
 
-Vue.use(Router)
 Vue.use(VueAnalytics, {
-  appName: 'christophstach.github.io',
-  trackingId: 'UA-9043429-10',
-  appVersion: '1.0.0',
-  vueRouter: router
+  id: 'UA-9043429-10',
+  router
 })
+Vue.use(Router)
 
 export default router

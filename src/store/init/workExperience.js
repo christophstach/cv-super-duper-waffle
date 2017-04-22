@@ -27,7 +27,7 @@ export default [
     startDate: new Date(2014, 10),
     endDate: new Date(2011, 9),
     responsibilities: [
-      'Planning and implementing new featuresforthe web based software UWEB2000',
+      'Planning and implementing new features for the web based software UWEB2000',
       'Developing a new frontend with Sencha ExtJS',
       'Bug fixing the PHP based business logic',
       'Troubleshooting with customers regarding the software',
