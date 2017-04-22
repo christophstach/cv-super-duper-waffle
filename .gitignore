@@ -1,10 +1,13 @@
 .DS_Store
 node_modules/
-dist/index.html
-dist/static/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 test/unit/coverage
 test/e2e/reports
 selenium-debug.log
+dist/
+!dist/sitemap.txt
+!dist/sitemap.xml
+!dist/google4db77daa2d35a136.html
+!dist/404.html
