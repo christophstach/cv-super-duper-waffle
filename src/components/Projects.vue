@@ -13,6 +13,13 @@
           more distinct and fun &#x1F609;.
         </p>
 
+        <div class="divider"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+
         <transition
           v-if="repos.length === 0"
           appear
