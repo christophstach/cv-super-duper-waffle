@@ -14,7 +14,7 @@
             <router-link tag="li" active-class="active" to="/" exact>
               <a>Curriculum Vitae</a>
             </router-link>
-            <router-link tag="li" active-class="active" to="/projects" exact>
+            <router-link tag="li" active-class="active" to="/projects/" exact>
               <a>Projects</a>
             </router-link>
           </ul>
