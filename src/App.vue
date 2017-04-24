@@ -1,5 +1,7 @@
 <template>
-  <app-material-layout></app-material-layout>
+  <div id="app">
+    <app-material-layout></app-material-layout>
+  </div>
 </template>
 
 <script>
