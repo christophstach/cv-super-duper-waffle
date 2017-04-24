@@ -22,10 +22,10 @@
 </template>
 
 <script>
-import AppWorkExperience from './WorkExperience'
-import AppEducationalBackground from './EducationalBackground'
-import AppCertificates from './Certificates'
-import AppAdditionalSkills from './AdditionalSkills'
+import AppWorkExperience from '@/components/WorkExperience'
+import AppEducationalBackground from '@/components/EducationalBackground'
+import AppCertificates from '@/components/Certificates'
+import AppAdditionalSkills from '@/components/AdditionalSkills'
 
 export default {
   name: 'app-home',

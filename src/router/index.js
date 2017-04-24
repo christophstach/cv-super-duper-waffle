@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import VueAnalytics from 'vue-analytics'
-import Home from '@/components/Home'
-import Projects from '@/components/Projects'
+import Home from '@/pages/Home'
+import Projects from '@/pages/Projects'
 
 const router = new Router({
   mode: 'history',
