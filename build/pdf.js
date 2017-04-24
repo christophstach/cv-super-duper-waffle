@@ -11,8 +11,6 @@ const educationalBackground = require(path.join(__dirname, '../src/store/init/ed
 const certificates = require(path.join(__dirname, '../src/store/init/certificates.js'))
 const additionalSkills = require(path.join(__dirname, '../src/store/init/additionalSkills.js'))
 
-console.log(additionalSkills)
-
 let workExperienceHtml = workExperience.map((w) => {
   let date = moment(w.startDate).format('YYYY/MM')
   date += w.endDate ? ' - ' : ''
@@ -85,7 +83,7 @@ let additionalSkillsHtml = additionalSkills.map((a) => `
       ` : ``}
 
       ${a.subCategories !== undefined && a.subCategories.length > 0 ? a.subCategories.map((sub) => `
-        <div>
+        <div class="sub-category">
           <strong>${sub.category}</strong>
           <br>
           ${sub.items.join(', ')}
@@ -99,19 +97,37 @@ const html = `
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
-    <!--
+
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-reboot.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-grid.min.css" rel="stylesheet">
-    -->
+
 
     <style>
       html {
-        font-size: 0.5rem;
+        font-size: 0.6rem;
+
+      }
+
+      .page {
+        padding: 40px;
+      }
+
+      .container {
+
       }
 
       h1 {
         border-bottom: 1px solid #000;
+        margin-bottom: 15px;
+      }
+
+      .row {
+        padding-bottom: 5px;
+      }
+
+      .sub-category {
+        padding-bottom: 5px;
       }
 
       ul.additional-skills {
@@ -119,23 +135,33 @@ const html = `
         padding: 0;
         list-style: none;
       }
+
+      .page-break {
+        page-break-after: always;
+      }
     </style>
   </head>
   <body>
 
     <div class="container">
 
-      <h1>Work Experience</h1>
-      ${workExperienceHtml}
+      <div class="page">
+        <h1>Work Experience</h1>
+        ${workExperienceHtml}
 
-      <h1>Educational background</h1>
-      ${educationalBackgroundHtml}
+        <h1>Educational background</h1>
+        ${educationalBackgroundHtml}
+      </div>
 
-      <h1>Certificates</h1>
-      ${certificatesHtml}
+      <div class="page-break"></div>
 
-      <h1>Additional skills</h1>
-      ${additionalSkillsHtml}
+      <div class="page">
+        <h1>Certificates</h1>
+        ${certificatesHtml}
+
+        <h1>Additional skills</h1>
+        ${additionalSkillsHtml}
+      </div>
 
     </div>
 
