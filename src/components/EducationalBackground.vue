@@ -12,8 +12,8 @@
         </strong>
       </div>
       <div class="col s12 m9">
-        <span>{{ e.name }}, {{ e.location }}</span><span v-if="e.programm">: </span>
-        <span v-if="e.programm">{{ e.programm }}</span>
+        <span>{{ e.name }}, {{ e.location }}</span><span v-if="e.program">: </span>
+        <span v-if="e.program">{{ e.program }}</span>
       </div>
     </div>
   </div>

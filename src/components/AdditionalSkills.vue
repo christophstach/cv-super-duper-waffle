@@ -4,7 +4,7 @@
 
     <div class="row" v-for="(a, index) in additionalSkills">
       <div class="col s12 m3">
-        {{ a.category }}
+        <strong>{{ a.category }}</strong>
       </div>
       <div class="col s12 m9">
         <ul v-if="a.items && a.items.length">
@@ -14,7 +14,7 @@
         <div v-for="(sub, index) in a.subCategories">
           <div class="section sub-category">
             <strong>{{ sub.category }}</strong>
-            <br/>
+            <br>
 
             <span v-for="(skill, index) in sub.items">
               {{ skill }}<span v-if="index < sub.items.length - 1">, </span>
