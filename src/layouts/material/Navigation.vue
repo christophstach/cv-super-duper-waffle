@@ -42,13 +42,13 @@
 </template>
 
 <script>
-import jquery from 'jquery'
+import jQuery from 'jquery'
 
 export default {
   name: 'app-navigation',
   created () {
-    jquery(document).ready(() => {
-      jquery('.button-collapse').sideNav({
+    jQuery(document).ready(() => {
+      jQuery('.button-collapse').sideNav({
         closeOnClick: true
       })
     })
