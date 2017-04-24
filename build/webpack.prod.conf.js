@@ -39,7 +39,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       // Absolute path to compiled SPA
       path.join(__dirname, '../dist'),
       // List of routes to prerender
-      []
+      ['/', '/projects']
     ),
     new webpack.DefinePlugin({
       'process.env': env
