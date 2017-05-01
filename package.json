@@ -20,12 +20,15 @@
     "axios": "^0.16.1",
     "font-awesome": "^4.7.0",
     "materialize-css": "^0.98.1",
+    "mocha": "^3.3.0",
     "pdfkit": "^0.8.0",
-    "vue": "^2.2.2",
+    "sinon-chai": "^2.10.0",
+    "vue": "^2.3.0",
     "vue-analytics": "^4.1.0",
     "vue-filter": "^0.2.0",
     "vue-head": "^2.0.11",
-    "vue-router": "^2.3.0",
+    "vue-router": "^2.5.3",
+    "vue-template-compiler": "^2.3.0",
     "vuex": "^2.2.1"
   },
   "devDependencies": {
