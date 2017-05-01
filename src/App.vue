@@ -27,23 +27,48 @@ export default {
         id: 'json-ld-person',
         type: 'application/ld+json',
         inner: JSON.stringify(
-          {
-            '@context': 'http://schema.org',
-            '@type': 'Person',
-            name: 'Christoph Stach',
-            jobTitle: 'Frontend Software Engineer',
-            height: '185 cm',
-            birthPlace: 'Düsseldorf, Germany',
-            gender: 'male',
-            nationality: 'Germany',
-            birthDate: new Date(1988, 2, 15),
-            url: 'http://christophstach.github.io',
-            sameAs: [
-              'https://github.com/christophstach',
-              'https://www.xing.com/profile/Christoph_Stach',
-              'https://de.linkedin.com/in/christoph-stach-7586b958'
-            ]
-          }
+          [
+            {
+              '@context': 'http://schema.org',
+              '@type': 'Person',
+              name: 'Christoph Stach',
+              jobTitle: 'Frontend Software Engineer',
+              height: '185 cm',
+              birthPlace: 'Düsseldorf, Germany',
+              gender: 'male',
+              nationality: 'Germany',
+              birthDate: new Date(1988, 2, 15),
+              url: 'https://christophstach.github.io',
+              sameAs: [
+                'https://github.com/christophstach',
+                'https://www.xing.com/profile/Christoph_Stach',
+                'https://de.linkedin.com/in/christoph-stach-7586b958'
+              ]
+            },
+            {
+              '@context': 'http://schema.org',
+              '@type': 'WebSite',
+              url: 'https://christophstach.github.io',
+              name: 'Website of Christoph Stach',
+              description: 'I\'m a full stack web engineer who is studying at the university of applied sciences HTW Berlin. My focus is on developing single page frontend applications.',
+              author: {
+                '@type': 'Person',
+                name: 'Christoph Stach',
+                jobTitle: 'Frontend Software Engineer',
+                height: '185 cm',
+                birthPlace: 'Düsseldorf, Germany',
+                gender: 'male',
+                nationality: 'Germany',
+                birthDate: new Date(1988, 2, 15),
+                url: 'https://christophstach.github.io',
+                sameAs: [
+                  'https://github.com/christophstach',
+                  'https://www.xing.com/profile/Christoph_Stach',
+                  'https://de.linkedin.com/in/christoph-stach-7586b958'
+                ]
+              }
+            }
+          ]
         )
       }
     ]
