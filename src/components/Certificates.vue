@@ -2,7 +2,7 @@
   <div class="app-certificates">
     <h3>Certificates</h3>
 
-    <div class="row" v-for="(c, index) in certificates">
+    <div class="row" v-for="c in certificates">
       <div class="col s12 m3">
         <strong>{{ c.date | date('%Y') }}</strong>
       </div>

@@ -1,21 +1,25 @@
 <template>
-  <div class="app-home">
+  <div class="app-curriculum-vitae">
 
-    <div class="row">
-      <div class="col s12">
+    <div class="container">
 
-        <app-work-experience/>
-        <div class="divider"></div>
+      <div class="row">
+        <div class="col s12">
 
-        <app-educational-background/>
-        <div class="divider"></div>
+          <app-work-experience/>
+          <div class="divider"></div>
 
-        <app-certificates/>
-        <div class="divider"></div>
+          <app-educational-background/>
+          <div class="divider"></div>
 
-        <app-additional-skills/>
+          <app-certificates/>
+          <div class="divider"></div>
 
+          <app-additional-skills/>
+
+        </div>
       </div>
+
     </div>
 
   </div>
@@ -40,5 +44,7 @@ export default {
 
 
 <style scoped>
-
+  .sub-header {
+    margin-top: -20px;
+  }
 </style>

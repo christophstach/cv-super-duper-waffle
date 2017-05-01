@@ -170,7 +170,7 @@ const html = `
 `
 
 pdf.create(html).toFile(
-  path.join(__dirname, '../dist/Christoph Stach - Curriculum Vitae.pdf'),
+  path.join(__dirname, '../dist/dl/Christoph Stach - Curriculum Vitae.pdf'),
   function(err, res) {
     console.log(res)
   }

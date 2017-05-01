@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import VueAnalytics from 'vue-analytics'
-import Home from '@/pages/Home'
+import CurriculumVitae from '@/pages/CurriculumVitae'
 import Projects from '@/pages/Projects'
 
 const router = new Router({
@@ -9,8 +9,8 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: Home
+      name: 'CurriculumVitae',
+      component: CurriculumVitae
     },
     {
       path: '/projects/',

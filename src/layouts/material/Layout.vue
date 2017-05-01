@@ -6,15 +6,13 @@
 
       <div class="row blue accent-5">
         <div class="col offset-s4 s4 m2 offset-m5 profile-picture-wrapper">
-          <img src="../../assets/me.jpg" alt="Profile" class="circle responsive-img profile-picture">
+          <img src="../../assets/me.jpg" alt="Profile" class="circle responsive-img profile-picture">/
         </div>
       </div>
     </header>
 
     <main>
-      <div class="container">
-        <router-view/>
-      </div>
+      <router-view/>
     </main>
 
     <app-footer/>
