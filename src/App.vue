@@ -24,17 +24,18 @@ export default {
     ],
     script: [
       {
+        id: 'json-ld-person',
         type: 'application/ld+json',
         inner: JSON.stringify(
           {
-            '@Context': 'http://schema.org',
-            '@Type': 'Person',
+            '@context': 'http://schema.org',
+            '@type': 'Person',
             name: 'Christoph Stach',
             jobTitle: 'Frontend Software Engineer',
             height: '185 cm',
             birthPlace: 'Düsseldorf, Germany',
             gender: 'male',
-            nationality: 'German',
+            nationality: 'Germany',
             birthDate: new Date(1988, 2, 15),
             url: 'http://christophstach.github.io',
             sameAs: [
