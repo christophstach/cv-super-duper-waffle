@@ -92,6 +92,11 @@ import { mapState, mapActions, mapMutations } from 'vuex'
 
 export default {
   name: 'app-projects',
+  head: {
+    title: {
+      inner: 'Projects'
+    }
+  },
   created () {
     this.fetchRepos()
   },
@@ -106,11 +111,6 @@ export default {
     ...mapMutations({
       clearRepos: 'CLEAR_REPOS'
     })
-  },
-  components: {
   }
 }
 </script>
-
-<style scoped>
-</style>

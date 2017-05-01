@@ -5,7 +5,12 @@ import App from './App'
 import router from './router'
 import store from './store'
 import VueFilter from 'vue-filter'
+import VueHead from 'vue-head'
 
+Vue.use(VueHead, {
+  separator: '-',
+  complement: 'Christoph Stach'
+})
 Vue.use(VueFilter)
 
 Vue.config.productionTip = false

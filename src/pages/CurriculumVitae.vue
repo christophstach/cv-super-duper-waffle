@@ -32,7 +32,12 @@ import AppCertificates from '@/components/Certificates'
 import AppAdditionalSkills from '@/components/AdditionalSkills'
 
 export default {
-  name: 'app-home',
+  name: 'app-curriculum-vitea',
+  head: {
+    title: {
+      inner: 'Curriculum Vitea'
+    }
+  },
   components: {
     AppWorkExperience,
     AppEducationalBackground,
@@ -41,7 +46,6 @@ export default {
   }
 }
 </script>
-
 
 <style scoped>
   .sub-header {

@@ -24,6 +24,7 @@
     "vue": "^2.2.2",
     "vue-analytics": "^4.1.0",
     "vue-filter": "^0.2.0",
+    "vue-head": "^2.0.11",
     "vue-router": "^2.3.0",
     "vuex": "^2.2.1"
   },
