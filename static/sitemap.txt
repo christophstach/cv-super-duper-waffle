@@ -1,4 +1,4 @@
-https://christophstach.github.io/
-https://christophstach.github.io/github/
-https://christophstach.github.io/projects/
-https://christophstach.github.io/projects/twitter
+http://christoph-stach.de/
+http://christoph-stach.de/github/
+http://christoph-stach.de/projects/
+http://christoph-stach.de/projects/twitter/

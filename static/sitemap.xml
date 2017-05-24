@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://christophstach.github.io/</loc>
+    <loc>http://christoph-stach.de/</loc>
   </url>
   <url>
-    <loc>https://christophstach.github.io/projects/</loc>
+    <loc>http://christoph-stach.de/projects/</loc>
   </url>
   <url>
-    <loc>https://christophstach.github.io/projects/twitter/</loc>
+    <loc>http://christoph-stach.de/projects/twitter/</loc>
   </url>
   <url>
-    <loc>https://christophstach.github.io/github/</loc>
+    <loc>http://christoph-stach.de/github/</loc>
   </url>
 </urlset>
