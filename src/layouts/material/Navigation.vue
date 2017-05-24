@@ -14,7 +14,10 @@
             <router-link tag="li" active-class="active" to="/" exact>
               <a>Curriculum Vitae</a>
             </router-link>
-            <router-link tag="li" active-class="active" to="/projects/" exact>
+            <router-link tag="li" active-class="active" to="/github/" exact>
+              <a>GitHub</a>
+            </router-link>
+            <router-link tag="li" active-class="active" to="/projects/">
               <a>Projects</a>
             </router-link>
           </ul>
@@ -31,11 +34,14 @@
           <router-link tag="li" active-class="active" to="/" exact>
             <a>Curriculum Vitae</a>
           </router-link>
-          <router-link tag="li" active-class="active" to="/projects" exact>
+          <router-link tag="li" active-class="active" to="/github" exact>
+            <a>GitHub</a>
+          </router-link>
+          <router-link tag="li" active-class="active" to="/projects">
             <a>Projects</a>
           </router-link>
-
         </ul>
+
       </div>
     </nav>
   </div>

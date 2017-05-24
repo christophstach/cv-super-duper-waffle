@@ -17,7 +17,8 @@ const state = {
   educationalBackground,
   certificates,
   additionalSkills,
-  repos: []
+  repos: [],
+  twitterHashTags: []
 }
 
 export default new Vuex.Store({
