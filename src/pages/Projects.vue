@@ -17,7 +17,7 @@
 
           <div class="card">
               <div class="card-image">
-                <img :src="'/static/img/projects/' + project.image">
+                <img :src="'/img/projects/' + project.image">
 
               </div>
               <div class="card-content">
