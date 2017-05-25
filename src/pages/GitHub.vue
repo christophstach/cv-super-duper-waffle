@@ -22,62 +22,42 @@
       <div class="row">
         <div class="col s12">
 
-          <transition
-            v-if="repos.length === 0"
-            appear
-            mode="out-in"
-            enter-active-class="animated fadeIn"
-            leave-active-class="animated fadeOut"
-          >
-            <div key="preloader" class="center-align">
-              <div class="preloader-wrapper big active">
-                <div class="spinner-layer spinner-blue-only">
-                  <div class="circle-clipper left">
-                    <div class="circle"></div>
-                  </div><div class="gap-patch">
-                    <div class="circle"></div>
-                  </div><div class="circle-clipper right">
-                    <div class="circle"></div>
-                  </div>
+          <div key="preloader" class="center-align" v-if="repos.length === 0">
+            <div class="preloader-wrapper big active">
+              <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
                 </div>
               </div>
             </div>
-          </transition>
+          </div>
 
-          <transition
-            v-if="repos.length > 0"
-            appear
-            mode="out-in"
-            enter-active-class="animated fadeIn"
-            leave-active-class="animated fadeOut"
-          >
-
-            <div key="table">
-
-
-              <table class="striped">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Last updated</th>
-                    <th>Link</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="(repo, index) in repos">
-                    <td>{{ repo.name }}</td>
-                    <td>{{ repo.description }}</td>
-                    <td>{{ repo.updated_at | date('%Y/%m/%d') }} </td>
-                    <td>
-                      <a :href="repo.html_url" title="See code"><i class="material-icons">code</i></a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-
-            </div>
-          </transition>
+          <div v-if="repos.length > 0">
+            <table class="striped">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Last updated</th>
+                  <th>Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(repo, index) in repos">
+                  <td>{{ repo.name }}</td>
+                  <td>{{ repo.description }}</td>
+                  <td>{{ repo.updated_at | date('%Y/%m/%d') }} </td>
+                  <td>
+                    <a :href="repo.html_url" title="See code"><i class="material-icons">code</i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
         </div>
       </div>
