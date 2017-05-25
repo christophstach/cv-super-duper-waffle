@@ -27,7 +27,7 @@
                   It shows different analyses about Twitter.
                   <br>
                   <br>
-                  <strong><em>Currently not functioning</em></strong>
+                  <strong><em>Currently displaying fake data</em></strong>
                 </p>
               </div>
               <div class="card-action">
