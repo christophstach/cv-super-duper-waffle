@@ -17,8 +17,9 @@
 
           <div class="card">
               <div class="card-image">
-                <img :src="'/img/projects/' + project.image">
-
+                <router-link :to="project.link">
+                  <img :src="'/img/projects/' + project.image">
+                </router-link>
               </div>
               <div class="card-content">
                 <span class="card-title">{{ project.title }}</span>
