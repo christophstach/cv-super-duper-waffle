@@ -21,7 +21,6 @@
               <a>Projects</a>
             </router-link>
           </ul>
-
         </div>
 
         <ul class="side-nav" id="mobile-nav">
@@ -34,10 +33,10 @@
           <router-link tag="li" active-class="active" to="/" exact>
             <a>Curriculum Vitae</a>
           </router-link>
-          <router-link tag="li" active-class="active" to="/github" exact>
+          <router-link tag="li" active-class="active" to="/github/" exact>
             <a>GitHub</a>
           </router-link>
-          <router-link tag="li" active-class="active" to="/projects">
+          <router-link tag="li" active-class="active" to="/projects/">
             <a>Projects</a>
           </router-link>
         </ul>
@@ -57,6 +56,8 @@ export default {
       jQuery('.button-collapse').sideNav({
         closeOnClick: true
       })
+
+      jQuery('.dropdown-button').dropdown()
     })
   }
 }
