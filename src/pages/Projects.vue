@@ -13,25 +13,24 @@
 
 
       <div class="row">
-        <div class="col s12 m4 l4 xl3">
+        <div class="col s12 m4 l4 xl3" v-for="(project, index) in projects">
 
           <div class="card">
               <div class="card-image">
-                <img src="../assets/Twitter_Logo_White_On_Blue.png">
+                <img :src="'/static/img/projects/' + project.image">
 
               </div>
               <div class="card-content">
-                <span class="card-title">Data science with Twitter</span>
+                <span class="card-title">{{ project.title }}</span>
                 <p>
-                  A project we are currently doing at university.
-                  It shows different analyses about Twitter.
-                  <br>
-                  <br>
-                  <strong><em>Currently displaying fake data</em></strong>
+                  {{ project.description }}
                 </p>
+                <div v-if="project.hint" class="hint">
+                  <small><strong><em>{{ project.hint }}</em></strong></small>
+                </div>
               </div>
               <div class="card-action">
-                <router-link to="/projects/twitter/">GoTo</router-link>
+                <router-link :to="project.link">GoTo</router-link>
               </div>
             </div>
           </div>
@@ -47,13 +46,24 @@
   </div>
 </template>
 
+<style scoped>
+  .hint {
+    padding-top: 15px;
+  }
+</style>
+
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'app-projects',
   head: {
     title: {
       inner: 'Projects'
     }
+  },
+  computed: {
+    ...mapState(['projects'])
   }
 }
 </script>

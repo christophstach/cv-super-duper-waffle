@@ -9,6 +9,7 @@ import workExperience from './init/workExperience'
 import educationalBackground from './init/educationalBackground'
 import certificates from './init/certificates'
 import additionalSkills from './init/additionalSkills'
+import projects from './init/projects'
 
 Vue.use(Vuex)
 
@@ -17,6 +18,7 @@ const state = {
   educationalBackground,
   certificates,
   additionalSkills,
+  projects,
   repos: [],
   twitterHashTags: []
 }

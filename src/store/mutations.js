@@ -7,6 +7,14 @@ const mutations = {
       ...data
     ]
   },
+  CLEAR_PROJECTS (state, data) {
+    state.projects = []
+  },
+  SET_PROJECTS (state, data) {
+    state.projects = [
+      ...data
+    ]
+  },
   CLEAR_TWITTER_HASHTAGS (state, data) {
     state.twitterHashTags = []
   },
