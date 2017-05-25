@@ -7,7 +7,9 @@ const actions = {
       .catch((error) => context.commit('API_FAILURE', error))
   },
   fetchTwitterHashTags (context) {
-    return axios.get('http://broccoli.f4.htw-berlin.de:8080/twitter/most-used-hash-tags-all')
+    // let url = 'http://broccoli.f4.htw-berlin.de:8080/twitter/most-used-hash-tags-all'
+    let url = '/api/most-used-hash-tags-all.json'
+    return axios.get(url)
       .then((response) => context.commit('SET_TWITTER_HASHTAGS', response.data))
       .catch((error) => context.commit('API_FAILURE', error))
   },
