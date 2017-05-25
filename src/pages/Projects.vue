@@ -13,7 +13,7 @@
 
 
       <div class="row">
-        <div class="col s12 m4 xl3">
+        <div class="col s12 m4 l4 xl3">
 
           <div class="card">
               <div class="card-image">
