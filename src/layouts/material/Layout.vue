@@ -1,5 +1,5 @@
 <template>
-  <div id="app-material-layout">
+  <div class="app-material-layout">
 
     <header>
       <app-navigation/>
@@ -15,7 +15,7 @@
       <router-view/>
     </main>
 
-    <app-footer/>
+    <app-foot/>
 
   </div>
 </template>
@@ -27,13 +27,13 @@ import 'font-awesome/css/font-awesome.css'
 import 'animate.css'
 
 import AppNavigation from '@/layouts/material/Navigation'
-import AppFooter from '@/layouts/material/Footer'
+import AppFoot from '@/layouts/material/Foot'
 
 export default {
   name: 'app-material-layout',
   components: {
     AppNavigation,
-    AppFooter
+    AppFoot
   }
 }
 </script>

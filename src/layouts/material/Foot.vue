@@ -1,5 +1,5 @@
 <template>
-  <footer class="page-footer blue darken-3 app-footer">
+  <footer class="page-footer blue darken-3 app-foot">
 
     <div class="footer-copyright">
       <div class="container">
