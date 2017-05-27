@@ -1,17 +1,16 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import App from './App'
-import router from './router'
-import store from './store'
-import VueFilter from 'vue-filter'
+import App from '@/App'
+import router from '@/router'
+import store from '@/store'
+import '@/filters'
 import VueHead from 'vue-head'
 
 Vue.use(VueHead, {
   separator: '-',
   complement: 'Christoph Stach'
 })
-Vue.use(VueFilter)
 
 Vue.config.productionTip = false
 

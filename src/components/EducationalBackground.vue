@@ -5,10 +5,10 @@
     <div class="row" v-for="e in educationalBackground">
       <div class="col s12 m3">
         <strong>
-          <span>{{ e.startDate | date('%Y/%m') }}</span>
+          <span>{{ e.startDate | date('MMM YYYY') }}</span>
           <span v-if="e.endDate"> - </span>
           <span v-if="typeof(e.endDate) === 'string'">{{ e.endDate }}</span>
-          <span v-if="e.endDate instanceof Date">{{ e.endDate | date('%Y/%m') }}</span>
+          <span v-if="e.endDate instanceof Date">{{ e.endDate | date('MMM YYYY') }}</span>
         </strong>
       </div>
       <div class="col s12 m9">

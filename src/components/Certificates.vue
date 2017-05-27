@@ -4,7 +4,7 @@
 
     <div class="row" v-for="c in certificates">
       <div class="col s12 m3">
-        <strong>{{ c.date | date('%Y') }}</strong>
+        <strong>{{ c.date | date('YYYY') }}</strong>
       </div>
       <div class="col s12 m9">
         <strong>{{ c.name }}:</strong>

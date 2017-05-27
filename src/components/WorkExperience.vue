@@ -5,10 +5,10 @@
     <div class="row" v-for="w in workExperience">
       <div class="col s12 m3">
         <strong>
-          <span>{{ w.startDate | date('%Y/%m') }}</span>
+          <span>{{ w.startDate | date('MMM YYYY') }}</span>
           <span v-if="w.endDate"> - </span>
           <span v-if="typeof(w.endDate) === 'string'">{{ w.endDate }}</span>
-          <span v-if="w.endDate instanceof Date">{{ w.endDate | date('%Y/%m') }}</span>
+          <span v-if="w.endDate instanceof Date">{{ w.endDate | date('MMM YYYY') }}</span>
         </strong>
       </div>
       <div class="col s12 m9">
