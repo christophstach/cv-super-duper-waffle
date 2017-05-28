@@ -1,5 +1,5 @@
 <template>
-  <div class="app-github">
+  <div class="app-git-hub">
 
     <div class="container">
 
@@ -50,7 +50,7 @@
                 <tr v-for="(repo, index) in repos">
                   <td>{{ repo.name }}</td>
                   <td>{{ repo.description }}</td>
-                  <td>{{ repo.updated_at | date('%Y/%m/%d') }} </td>
+                  <td>{{ repo.updated_at | date }} </td>
                   <td>
                     <a :href="repo.html_url" title="See code"><i class="material-icons">code</i></a>
                   </td>
@@ -71,7 +71,7 @@
 import { mapState, mapActions, mapMutations } from 'vuex'
 
 export default {
-  name: 'app-github',
+  name: 'app-git-hub',
   head: {
     title: {
       inner: 'GitHub'
