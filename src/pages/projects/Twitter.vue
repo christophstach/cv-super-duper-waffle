@@ -2,11 +2,20 @@
   <div class="app-projects-twitter">
 
     <div class="container">
+      <h3>Twitter Datascience Project</h3>
 
-      <div class="row">
+      <section class="row">
+        <div class="col s4">
+          <h4>Test bar chart</h4>
+
+          <app-bar-chart/>
+        </div>
+      </section>
+
+      <section class="row">
         <div class="col s12">
 
-          <h3>Twitter Datascience Project</h3>
+
           <h4>Tagcloud of most used hashtags</h4>
 
           <div v-if="twitterHashTags.length === 0">
@@ -50,7 +59,7 @@
           </div>
 
         </div>
-      </div>
+      </section>
 
     </div>
 
@@ -66,10 +75,13 @@ import { mapState, mapActions, mapMutations } from 'vuex'
 import jQuery from 'jquery'
 import 'jqcloud2/dist/jqcloud'
 import 'jqcloud2/dist/jqcloud.css'
-// import cloud from 'd3-cloud'
+import AppBarChart from '@/components/charts/BarChart'
 
 export default {
   name: 'app-projects-twitter',
+  components: {
+    AppBarChart
+  },
   head: {
     title: {
       inner: 'Projects - Twitter'
@@ -80,37 +92,6 @@ export default {
       jQuery('.tagcloud').jQCloud(this.twitterHashTags, {
         height: 350
       })
-      /*
-      let fill = (v) => v
-      let layout = cloud()
-        .size([500, 500])
-        .words(this.twitterHashTags)
-        .padding(5)
-        .rotate(() => ~~(Math.random() * 180))
-        .font('Impact')
-        .fontSize((d) => d.size)
-        .on('end', (words) => {
-          d3.select('#wordcloud')
-            .append('svg')
-            .attr('width', layout.size()[0])
-            .attr('height', layout.size()[1])
-            .append('g')
-            .attr('transform', 'translate(' + layout.size()[0] / 2 + ',' + layout.size()[1] / 2 + ')')
-            .selectAll('text')
-            .data(words)
-            .enter().append('text')
-            .style('font-size', (d) => d.size + 'px')
-            .style('font-family', 'Impact')
-            .style('fill', (d, i) => fill(i))
-            .attr('text-anchor', 'middle')
-            .attr('transform', (d) => {
-              return 'translate(' + [d.x, d.y] + ')rotate(' + d.rotate + ')'
-            })
-            .text((d) => d.text)
-        })
-
-      layout.start()
-      */
     })
   },
   destroyed () {

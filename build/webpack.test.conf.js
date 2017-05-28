@@ -1,8 +1,10 @@
 // This is the webpack config used for unit tests.
-
+var path = require('path')
 var utils = require('./utils')
 var webpack = require('webpack')
+var config = require('../config')
 var merge = require('webpack-merge')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 var baseConfig = require('./webpack.base.conf')
 
 var webpackConfig = merge(baseConfig, {
@@ -14,7 +16,15 @@ var webpackConfig = merge(baseConfig, {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': require('../config/test.env')
-    })
+    }),
+    // copy custom static assets
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../static'),
+        to: config.build.assetsSubDirectory,
+        ignore: ['.*']
+      }
+    ])
   ]
 })
 
