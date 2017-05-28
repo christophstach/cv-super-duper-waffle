@@ -5,10 +5,10 @@
       <h3>Twitter Datascience Project</h3>
 
       <section class="row">
-        <div class="col s4">
-          <h4>Test bar chart</h4>
+        <div class="col s6">
+          <h4>Tweets per weekday</h4>
 
-          <app-bar-chart/>
+          <app-tweets-per-weekday-chart/>
         </div>
       </section>
 
@@ -75,12 +75,12 @@ import { mapState, mapActions, mapMutations } from 'vuex'
 import jQuery from 'jquery'
 import 'jqcloud2/dist/jqcloud'
 import 'jqcloud2/dist/jqcloud.css'
-import AppBarChart from '@/components/charts/BarChart'
+import AppTweetsPerWeekdayChart from '@/components/charts/TweetsPerWeekdayChart'
 
 export default {
   name: 'app-projects-twitter',
   components: {
-    AppBarChart
+    AppTweetsPerWeekdayChart
   },
   head: {
     title: {
