@@ -15,6 +15,22 @@ const mutations = {
       ...data
     ]
   },
+  CLEAR_TWEETS_PER_HOUR (state, data) {
+    state.tweetsPerHour = []
+  },
+  SET_TWEETS_PER_HOUR (state, data) {
+    state.tweetsPerHour = [
+      ...data
+    ]
+  },
+  CLEAR_TWEETS_PER_WEEKDAY (state, data) {
+    state.tweetsPerWeekday = []
+  },
+  SET_TWEETS_PER_WEEKDAY (state, data) {
+    state.tweetsPerWeekday = [
+      ...data
+    ]
+  },
   CLEAR_TWITTER_HASHTAGS (state, data) {
     state.twitterHashTags = []
   },
