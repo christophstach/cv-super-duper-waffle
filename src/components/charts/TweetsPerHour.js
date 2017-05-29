@@ -16,6 +16,7 @@ export default Bar.extend({
         scales: {
           xAxes: [
             {
+              barThickness: 10,
               gridLines: {
                 display: true
               }

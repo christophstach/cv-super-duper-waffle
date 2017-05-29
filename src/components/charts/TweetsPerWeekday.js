@@ -17,6 +17,7 @@ export default Bar.extend({
         scales: {
           xAxes: [
             {
+              barThickness: 30,
               gridLines: {
                 display: true
               }
@@ -49,13 +50,13 @@ export default Bar.extend({
     ...mapState(['tweetsPerWeekday']),
     labels () {
       return [
-        moment('1988-02-15').format('dddd'), // Monday
-        moment('1988-02-16').format('dddd'), // Tuesday
-        moment('1988-02-17').format('dddd'), // Wednesday
-        moment('1988-02-18').format('dddd'), // Thursday
-        moment('1988-02-19').format('dddd'), // Friday
-        moment('1988-02-20').format('dddd'), // Saturday
-        moment('1988-02-21').format('dddd')  // Sunday
+        moment('1988-02-15').format('ddd'), // Monday
+        moment('1988-02-16').format('ddd'), // Tuesday
+        moment('1988-02-17').format('ddd'), // Wednesday
+        moment('1988-02-18').format('ddd'), // Thursday
+        moment('1988-02-19').format('ddd'), // Friday
+        moment('1988-02-20').format('ddd'), // Saturday
+        moment('1988-02-21').format('ddd')  // Sunday
       ]
     },
     datasets () {
