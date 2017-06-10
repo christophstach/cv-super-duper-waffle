@@ -1,51 +1,51 @@
-import { mapState, mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
 import { Bar } from 'vue-chartjs'
 
 export default Bar.extend({
   name: 'app-tweets-per-hour',
   props: ['options'],
   mounted () {
-    this.fetchTweetsPerHour().then(() => {
-      const defaultOptions = {
-        responsive: true,
-        maintainAspectRatio: false,
-        gridLines: {
-          display: true,
-          color: '#FF0000'
-        },
-        scales: {
-          xAxes: [
-            {
-              barThickness: 10,
-              gridLines: {
-                display: true
-              }
+    const defaultOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      gridLines: {
+        display: true,
+        color: '#FF0000'
+      },
+      scales: {
+        xAxes: [
+          {
+            barThickness: 10,
+            gridLines: {
+              display: true
             }
-          ],
-          yAxes: [
-            {
-              gridLines: {
-                display: true
-              }
+          }
+        ],
+        yAxes: [
+          {
+            gridLines: {
+              display: true
             }
-          ]
-        }
+          }
+        ]
       }
+    }
 
-      this.renderChart(
-        {
-          labels: this.labels,
-          datasets: this.datasets
-        },
-        {
-          ...defaultOptions,
-          ...this.options
-        }
-      )
-    }, () => {})
+    this.renderChart(
+      {
+        labels: this.labels,
+        datasets: this.datasets
+      },
+      {
+        ...defaultOptions,
+        ...this.options
+      }
+    )
   },
   computed: {
-    ...mapState(['tweetsPerHour']),
+    ...mapGetters({
+      tweetsPerHour: 'twitterProjectTweetsPerHour'
+    }),
     labels () {
       return [
         '0',
@@ -68,6 +68,7 @@ export default Bar.extend({
         '17',
         '18',
         '19',
+        '20',
         '21',
         '22',
         '23'
@@ -82,8 +83,5 @@ export default Bar.extend({
         }
       ]
     }
-  },
-  methods: {
-    ...mapActions(['fetchTweetsPerHour'])
   }
 })

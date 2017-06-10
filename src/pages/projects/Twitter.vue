@@ -5,33 +5,30 @@
       <h3>Twitter Datascience Project</h3>
 
       <section class="row">
-        <div class="col s12 m6">
+        <div class="col s12 m5">
+          <app-date-picker :value="fromDate" @input="setFromDate" placeholder="From"/>
+        </div>
+        <div class="col s12 m5">
+          <app-date-picker :value="toDate" @input="setToDate" placeholder="To"/>
+        </div>
+        <div class="col s12 m2">
+          <a class="waves-effect waves-light btn" @click="loadData"><i class="material-icons left">loop</i>Refresh</a>
+        </div>
+
+        <div class="col s12">
           <h4>Tweets per weekday</h4>
 
-          <app-tweets-per-weekday/>
-        </div>
-        <div class="col s12 m6">
-          <h4>Tweets per hour</h4>
-
-          <app-tweets-per-hour/>
-        </div>
-      </section>
-
-      <section class="row">
-        <div class="col s12">
-
-
-          <h4>Tagcloud of most used hashtags</h4>
-
-          <div v-if="twitterHashTags.length === 0">
+          <div v-if="tweetsPerWeekday.length === 0">
             <div key="preloader" class="center-align">
               <div class="preloader-wrapper big active">
                 <div class="spinner-layer spinner-blue-only">
                   <div class="circle-clipper left">
                     <div class="circle"></div>
-                  </div><div class="gap-patch">
+                  </div>
+                  <div class="gap-patch">
                     <div class="circle"></div>
-                  </div><div class="circle-clipper right">
+                  </div>
+                  <div class="circle-clipper right">
                     <div class="circle"></div>
                   </div>
                 </div>
@@ -39,8 +36,64 @@
             </div>
           </div>
 
-          <div v-if="twitterHashTags.length > 0">
-              <div class="tagcloud"></div>
+          <div v-if="tweetsPerWeekday.length > 0">
+            <app-tweets-per-weekday/>
+          </div>
+        </div>
+
+        <div class="col s12">
+          <h4>Tweets per hour</h4>
+
+
+          <div v-if="tweetsPerHour.length === 0">
+            <div key="preloader" class="center-align">
+              <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="tweetsPerHour.length > 0">
+            <app-tweets-per-hour/>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="row">
+        <div class="col s12">
+          <h4>Tagcloud of most used hashtags</h4>
+
+          <div v-if="mostUsedHashTags.length === 0">
+            <div key="preloader" class="center-align">
+              <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div v-if="mostUsedHashTags.length > 0">
+              <div class="tagcloud" ref="tagcloud"></div>
 
               <div class="divider"></div>
 
@@ -53,7 +106,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="(hashTag, index) in twitterHashTags">
+                  <tr v-for="(hashTag, index) in mostUsedHashTags">
                     <td>{{ index + 1 }}</td>
                     <td>{{ hashTag.text }}</td>
                     <td>{{ hashTag.count }}</td>
@@ -76,42 +129,71 @@
 </style>
 
 <script>
-import { mapState, mapActions, mapMutations } from 'vuex'
-import jQuery from 'jquery'
+import { mapState, mapActions, mapMutations, mapGetters } from 'vuex'
+import $ from 'jquery'
 import 'jqcloud2/dist/jqcloud'
 import 'jqcloud2/dist/jqcloud.css'
 import AppTweetsPerWeekday from '@/components/charts/TweetsPerWeekday'
 import AppTweetsPerHour from '@/components/charts/TweetsPerHour'
+import AppDatePicker from '@/components/input/DatePicker'
 
 export default {
   name: 'app-projects-twitter',
   components: {
     AppTweetsPerWeekday,
-    AppTweetsPerHour
+    AppTweetsPerHour,
+    AppDatePicker
   },
   head: {
     title: {
       inner: 'Projects - Twitter'
     }
   },
-  created () {
-    this.fetchTwitterHashTags().then((value) => {
-      jQuery('.tagcloud').jQCloud(this.twitterHashTags, {
-        height: 350
-      })
-    })
+  mounted () {
+    this.loadData()
   },
   destroyed () {
-    this.clearTwitterHashTags()
+    this.clearMostUsedHashTags()
   },
   computed: {
-    ...mapState(['twitterHashTags'])
+    ...mapState(['projects']),
+    ...mapGetters({
+      mostUsedHashTags: 'twitterProjectMostUsedHashTags',
+      tweetsPerHour: 'twitterProjectTweetsPerHour',
+      tweetsPerWeekday: 'twitterProjectTweetsPerWeekday'
+    }),
+    ...mapGetters({
+      fromDate: 'twitterProjectFromDate',
+      toDate: 'twitterProjectToDate'
+    })
   },
   methods: {
-    ...mapActions(['fetchTwitterHashTags']),
+    ...mapActions(['fetchMostUsedHashTags', 'fetchTweetsPerHour', 'fetchTweetsPerWeekday']),
     ...mapMutations({
-      clearTwitterHashTags: 'CLEAR_TWITTER_HASHTAGS'
-    })
+      clearMostUsedHashTags: 'CLEAR_MOST_USED_HASH_TAGS',
+      clearTweetsPerHour: 'CLEAR_TWEETS_PER_HOUR',
+      clearTweetsPerWeekday: 'CLEAR_TWEETS_PER_WEEKDAY',
+      setFromDate: 'SET_TWITTER_PROJECT_FROM_DATE',
+      setToDate: 'SET_TWITTER_PROJECT_TO_DATE'
+    }),
+    loadData () {
+      this.clearMostUsedHashTags()
+      this.fetchMostUsedHashTags({ fromDate: this.fromDate, toDate: this.toDate }).then(() => {
+        $(this.$refs.tagcloud).jQCloud(this.mostUsedHashTags, {
+          height: 350
+        })
+      })
+
+      this.clearTweetsPerHour()
+      this.fetchTweetsPerHour({ fromDate: this.fromDate, toDate: this.toDate }).then(() => {
+
+      })
+
+      this.clearTweetsPerWeekday()
+      this.fetchTweetsPerWeekday({ fromDate: this.fromDate, toDate: this.toDate }).then(() => {
+
+      })
+    }
   }
 }
 </script>

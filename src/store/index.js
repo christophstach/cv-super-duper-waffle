@@ -19,10 +19,7 @@ const state = {
   certificates,
   additionalSkills,
   projects,
-  repos: [],
-  twitterHashTags: [],
-  tweetsPerHour: [],
-  tweetsPerWeekday: []
+  repos: []
 }
 
 export default new Vuex.Store({

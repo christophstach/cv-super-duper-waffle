@@ -6,24 +6,45 @@ const actions = {
       .then((response) => context.commit('SET_REPOS', response.data.items))
       .catch((error) => context.commit('API_FAILURE', error))
   },
-  fetchTwitterHashTags (context) {
-    // let url = 'http://broccoli.f4.htw-berlin.de:8080/twitter/most-used-hash-tags-all'
-    let url = '/api/most-used-hash-tags-all.json'
-    return axios.get(url)
-      .then((response) => context.commit('SET_TWITTER_HASHTAGS', response.data))
+  fetchMostUsedHashTags (context, { fromDate, toDate }) {
+    let url
+
+    if (process.env.NODE_ENV === 'development') {
+      url = 'http://localhost:8080/twitter/most-used-hash-tags-all'
+    } else {
+      url = '/api/most-used-hash-tags-all.json'
+      // url = 'http://broccoli.f4.htw-berlin.de:8080/twitter/most-used-hash-tags-all'
+    }
+
+    return axios.get(url, { params: { fromDate, toDate } })
+      .then((response) => context.commit('SET_MOST_USED_HASH_TAGS', response.data))
       .catch((error) => context.commit('API_FAILURE', error))
   },
-  fetchTweetsPerHour (context) {
-    // let url = 'http://broccoli.f4.htw-berlin.de:8080/twitter/most-used-hash-tags-all'
-    let url = '/api/tweets-per-hour.json'
-    return axios.get(url)
+  fetchTweetsPerHour (context, { fromDate, toDate }) {
+    let url
+
+    if (process.env.NODE_ENV === 'development') {
+      url = 'http://localhost:8080/twitter/tweets-per-hour'
+    } else {
+      url = '/api/tweets-per-hour.json'
+      // url = 'http://broccoli.f4.htw-berlin.de:8080/twitter/tweets-per-hour'
+    }
+
+    return axios.get(url, { params: { fromDate, toDate } })
       .then((response) => context.commit('SET_TWEETS_PER_HOUR', response.data))
       .catch((error) => context.commit('API_FAILURE', error))
   },
-  fetchTweetsPerWeekday (context) {
-    // let url = 'http://broccoli.f4.htw-berlin.de:8080/tweets-per-weekday'
-    let url = '/api/tweets-per-weekday.json'
-    return axios.get(url)
+  fetchTweetsPerWeekday (context, { fromDate, toDate }) {
+    let url
+
+    if (process.env.NODE_ENV === 'development') {
+      url = 'http://localhost:8080/twitter/tweets-per-weekday'
+    } else {
+      url = '/api/tweets-per-weekday.json'
+      // url = 'http://broccoli.f4.htw-berlin.de:8080/twitter/tweets-per-weekday'
+    }
+
+    return axios.get(url, { params: { fromDate, toDate } })
       .then((response) => context.commit('SET_TWEETS_PER_WEEKDAY', response.data))
       .catch((error) => context.commit('API_FAILURE', error))
   },

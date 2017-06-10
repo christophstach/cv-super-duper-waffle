@@ -2,7 +2,7 @@
   <div class="navbar-fixed app-navigation">
     <nav class="blue darken-3 navbar-fixed">
       <div class="nav-wrapper">
-        <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a href="#" data-activates="mobile-nav" class="button-collapse" ref="navToggler"><i class="material-icons">menu</i></a>
 
         <div class="container">
           <router-link to="/" class="brand-logo">
@@ -47,17 +47,13 @@
 </template>
 
 <script>
-import jQuery from 'jquery'
+import $ from 'jquery'
 
 export default {
   name: 'app-navigation',
-  created () {
-    jQuery(document).ready(() => {
-      jQuery('.button-collapse').sideNav({
-        closeOnClick: true
-      })
-
-      jQuery('.dropdown-button').dropdown()
+  mounted () {
+    $(this.$refs.navToggler).sideNav({
+      closeOnClick: true
     })
   }
 }

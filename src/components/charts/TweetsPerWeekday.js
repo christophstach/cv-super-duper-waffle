@@ -1,4 +1,4 @@
-import { mapState, mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
 import moment from 'moment'
 import { Bar } from 'vue-chartjs'
 
@@ -6,48 +6,48 @@ export default Bar.extend({
   name: 'app-tweets-per-weekday',
   props: ['options'],
   mounted () {
-    this.fetchTweetsPerWeekday().then(() => {
-      const defaultOptions = {
-        responsive: true,
-        maintainAspectRatio: false,
-        gridLines: {
-          display: true,
-          color: '#FF0000'
-        },
-        scales: {
-          xAxes: [
-            {
-              barThickness: 30,
-              gridLines: {
-                display: true
-              }
+    const defaultOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      gridLines: {
+        display: true,
+        color: '#FF0000'
+      },
+      scales: {
+        xAxes: [
+          {
+            barThickness: 30,
+            gridLines: {
+              display: true
             }
-          ],
-          yAxes: [
-            {
-              gridLines: {
-                display: true
-              }
+          }
+        ],
+        yAxes: [
+          {
+            gridLines: {
+              display: true
             }
-          ]
-        }
+          }
+        ]
       }
+    }
 
-      this.renderChart(
-        {
-          labels: this.labels,
-          datasets: this.datasets
-        },
-        {
-          ...defaultOptions,
-          ...this.options
+    this.renderChart(
+      {
+        labels: this.labels,
+        datasets: this.datasets
+      },
+      {
+        ...defaultOptions,
+        ...this.options
 
-        }
-      )
-    }, () => {})
+      }
+    )
   },
   computed: {
-    ...mapState(['tweetsPerWeekday']),
+    ...mapGetters({
+      tweetsPerWeekday: 'twitterProjectTweetsPerWeekday'
+    }),
     labels () {
       return [
         moment('1988-02-15').format('ddd'), // Monday
@@ -68,8 +68,5 @@ export default Bar.extend({
         }
       ]
     }
-  },
-  methods: {
-    ...mapActions(['fetchTweetsPerWeekday'])
   }
 })
