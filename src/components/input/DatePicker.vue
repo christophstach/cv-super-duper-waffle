@@ -20,10 +20,10 @@ export default {
       required: true
     },
     min: {
-
+      type: Date
     },
     max: {
-
+      type: Date
     },
     placeholder: {
       type: String,
@@ -32,8 +32,7 @@ export default {
   },
   data () {
     return {
-      picker: null,
-      contextSelect: null
+      picker: null
     }
   },
   watch: {
@@ -66,12 +65,8 @@ export default {
       },
       onSet (context) {
         if (context.select) {
-          if (context.select !== this.contextSelect) {
-            vm.contextSelect = context.select
-
-            let date = new Date(context.select)
-            vm.$emit('input', date)
-          }
+          let date = new Date(context.select)
+          vm.$emit('input', date)
         }
       }
     })
