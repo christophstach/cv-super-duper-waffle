@@ -6,10 +6,10 @@
 
       <section class="row">
         <div class="col s12 m5">
-          <app-date-picker :value="fromDate" @input="setFromDate" placeholder="From"/>
+          <app-date-picker :value="fromDate" :max="toDate" @input="setFromDate" placeholder="From"/>
         </div>
         <div class="col s12 m5">
-          <app-date-picker :value="toDate" @input="setToDate" placeholder="To"/>
+          <app-date-picker :value="toDate" :min="fromDate" @input="setToDate" placeholder="To"/>
         </div>
         <div class="col s12 m2">
           <a class="waves-effect waves-light btn" @click="loadData"><i class="material-icons left">loop</i>Refresh</a>
@@ -74,7 +74,7 @@
         <div class="col s12">
           <h4>Tagcloud of most used hashtags</h4>
 
-          <div v-if="mostUsedHashTags.length === 0">
+          <div v-if="mostUsedHashTags !== null && mostUsedHashTags.length === 0">
             <div key="preloader" class="center-align">
               <div class="preloader-wrapper big active">
                 <div class="spinner-layer spinner-blue-only">
@@ -92,7 +92,7 @@
             </div>
           </div>
 
-          <div v-if="mostUsedHashTags.length > 0">
+          <div v-if="mostUsedHashTags === null || mostUsedHashTags.length > 0">
               <div class="tagcloud" ref="tagcloud"></div>
 
               <div class="divider"></div>

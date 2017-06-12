@@ -35,9 +35,13 @@ const mutations = {
     state.projects.filter((p) => p.id === 'twitter').reduce((p, c) => c).data.mostUsedHashTags = []
   },
   SET_MOST_USED_HASH_TAGS (state, data) {
-    state.projects.filter((p) => p.id === 'twitter').reduce((p, c) => c).data.mostUsedHashTags = [
-      ...data
-    ]
+    if (data === null) {
+      state.projects.filter((p) => p.id === 'twitter').reduce((p, c) => c).data.mostUsedHashTags = null
+    } else {
+      state.projects.filter((p) => p.id === 'twitter').reduce((p, c) => c).data.mostUsedHashTags = [
+        ...data
+      ]
+    }
   },
   SET_TWITTER_PROJECT_FROM_DATE (state, data) {
     state.projects.filter((p) => p.id === 'twitter').reduce((p, c) => c).data.fromDate = data

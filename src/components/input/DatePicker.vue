@@ -19,26 +19,64 @@ export default {
       type: Date,
       required: true
     },
+    min: {
+
+    },
+    max: {
+
+    },
     placeholder: {
       type: String,
       required: true
     }
   },
+  data () {
+    return {
+      picker: null,
+      contextSelect: null
+    }
+  },
+  watch: {
+    min (value) {
+      if (this.picker) {
+        this.picker.set('min', value)
+        this.picker.render()
+      }
+    },
+    max (value) {
+      if (this.picker) {
+        this.picker.set('max', value)
+        this.picker.render()
+      }
+    }
+  },
   mounted () {
+    let vm = this
     let date = this.value
 
-    $(this.$refs.input).pickadate({
+    let $input = $(this.$refs.input).pickadate({
+      closeOnSelect: true,
+      editable: false,
       selectMonths: false,
       selectYears: false,
+      format: 'dd.mm.yyyy',
+      clear: false,
       onStart () {
-        this.set('select', [date.getFullYear(), date.getMonth() + 1, date.getDate()])
+        this.set('select', date)
       },
-      onSet: (context) => {
-        let date = new Date(context.select)
+      onSet (context) {
+        if (context.select) {
+          if (context.select !== this.contextSelect) {
+            vm.contextSelect = context.select
 
-        this.$emit('input', date)
+            let date = new Date(context.select)
+            vm.$emit('input', date)
+          }
+        }
       }
     })
+
+    this.picker = $input.pickadate('picker')
   }
 }
 </script>

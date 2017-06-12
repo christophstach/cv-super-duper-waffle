@@ -1,3 +1,7 @@
+let today = new Date()
+let oneWeekAgo = new Date()
+oneWeekAgo.setDate(today.getDate() - 6)
+
 export default [
   {
     id: 'twitter',
@@ -7,8 +11,8 @@ export default [
     hint: 'Currently displaying fake data',
     link: '/projects/twitter/',
     data: {
-      fromDate: new Date(),
-      toDate: new Date(),
+      fromDate: oneWeekAgo,
+      toDate: today,
       tweetsPerHour: [],
       tweetsPerWeekday: [],
       mostUsedHashTags: []

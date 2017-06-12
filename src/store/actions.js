@@ -17,7 +17,7 @@ const actions = {
     }
 
     return axios.get(url, { params: { fromDate, toDate } })
-      .then((response) => context.commit('SET_MOST_USED_HASH_TAGS', response.data))
+      .then((response) => context.commit('SET_MOST_USED_HASH_TAGS', response.data.length > 0 ? response.data : null))
       .catch((error) => context.commit('API_FAILURE', error))
   },
   fetchTweetsPerHour (context, { fromDate, toDate }) {
