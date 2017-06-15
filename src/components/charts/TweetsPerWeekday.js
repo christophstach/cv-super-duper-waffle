@@ -62,7 +62,7 @@ export default Bar.extend({
     datasets () {
       return [
         {
-          label: 'All Tweets',
+          label: 'Tweets',
           backgroundColor: '#2196F3',
           data: this.tweetsPerWeekday
         }
