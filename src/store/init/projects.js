@@ -1,6 +1,15 @@
 let today = new Date()
 let oneWeekAgo = new Date()
+today.setHours(0)
+today.setMinutes(0)
+today.setSeconds(0)
+today.setMilliseconds(0)
+
 oneWeekAgo.setDate(today.getDate() - 6)
+oneWeekAgo.setHours(0)
+oneWeekAgo.setMinutes(0)
+oneWeekAgo.setSeconds(0)
+oneWeekAgo.setMilliseconds(0)
 
 export default [
   {
