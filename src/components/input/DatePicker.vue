@@ -52,8 +52,13 @@ export default {
   mounted () {
     let vm = this
     let date = this.value
+    let options = {}
+
+    this.min && (options.min = this.min)
+    this.max && (options.max = this.max)
 
     let $input = $(this.$refs.input).pickadate({
+      ...options,
       closeOnSelect: true,
       editable: false,
       selectMonths: false,

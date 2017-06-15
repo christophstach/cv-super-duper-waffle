@@ -32,10 +32,12 @@ const router = new Router({
   ]
 })
 
-Vue.use(VueAnalytics, {
-  id: 'UA-9043429-10',
-  router
-})
+if (process.env.NODE_ENV !== 'development') {
+  Vue.use(VueAnalytics, {
+    id: 'UA-9043429-10',
+    router
+  })
+}
 Vue.use(Router)
 
 export default router
