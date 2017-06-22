@@ -12,8 +12,8 @@ const actions = {
     if (process.env.NODE_ENV === 'development') {
       url = 'http://localhost:8080/twitter/most-used-hash-tags-all'
     } else {
-      url = '/api/most-used-hash-tags-all.json'
-      // url = 'http://broccoli.f4.htw-berlin.de:8080/twitter/most-used-hash-tags-all'
+      // url = '/api/most-used-hash-tags-all.json'
+      url = 'http://broccoli.f4.htw-berlin.de:8080/twitter/most-used-hash-tags-all'
     }
 
     return axios.get(url, { params: { fromDate, toDate } })
@@ -26,8 +26,8 @@ const actions = {
     if (process.env.NODE_ENV === 'development') {
       url = 'http://localhost:8080/twitter/tweets-per-hour'
     } else {
-      url = '/api/tweets-per-hour.json'
-      // url = 'http://broccoli.f4.htw-berlin.de:8080/twitter/tweets-per-hour'
+      // url = '/api/tweets-per-hour.json'
+      url = 'http://broccoli.f4.htw-berlin.de:8080/twitter/tweets-per-hour'
     }
 
     return axios.get(url, { params: { fromDate, toDate } })
@@ -40,8 +40,8 @@ const actions = {
     if (process.env.NODE_ENV === 'development') {
       url = 'http://localhost:8080/twitter/tweets-per-weekday'
     } else {
-      url = '/api/tweets-per-weekday.json'
-      // url = 'http://broccoli.f4.htw-berlin.de:8080/twitter/tweets-per-weekday'
+      // url = '/api/tweets-per-weekday.json'
+      url = 'http://broccoli.f4.htw-berlin.de:8080/twitter/tweets-per-weekday'
     }
 
     return axios.get(url, { params: { fromDate, toDate } })
