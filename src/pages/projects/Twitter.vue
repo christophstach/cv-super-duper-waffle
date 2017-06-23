@@ -115,7 +115,7 @@
               <div class="tagcloud" ref="tagcloud"></div>
 
               <!-- Modal Structure -->
-              <div  class="modal" ref="modal">
+              <div class="modal" ref="modal">
                 <div class="modal-content">
                   <h4>List of most used hash tags</h4>
                   <table class="striped taglist">
@@ -152,7 +152,10 @@
 </template>
 
 <style scoped>
-
+table.taglist > tbody > tr > td:first-of-type + td {
+  word-wrap: break-word;
+  word-break: break-all;
+}
 </style>
 
 <script>
