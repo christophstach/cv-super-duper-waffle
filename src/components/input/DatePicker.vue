@@ -5,7 +5,7 @@
       ref="input"
       class="datepicker"
       :placeholder="placeholder"
-    />
+    >
   </div>
 </template>
 

@@ -2,20 +2,20 @@
   <div class="app-material-layout">
 
     <header>
-      <app-navigation/>
+      <app-navigation></app-navigation>
 
       <div class="row blue accent-5">
         <div class="col offset-s4 s4 m2 offset-m5 profile-picture-wrapper">
-          <img src="../../assets/me.jpg" alt="Profile" class="circle responsive-img profile-picture"/>
+          <img src="../../assets/me.jpg" alt="Profile" class="circle responsive-img profile-picture">
         </div>
       </div>
     </header>
 
     <main>
-      <router-view/>
+      <router-view></router-view>
     </main>
 
-    <app-foot/>
+    <app-foot></app-foot>
 
   </div>
 </template>

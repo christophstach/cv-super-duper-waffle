@@ -16,10 +16,10 @@
 
       <section class="row">
         <div class="col s12 m5">
-          <app-date-picker :value="fromDate" :max="toDate" @input="setFromDate" placeholder="From"/>
+          <app-date-picker :value="fromDate" :max="toDate" @input="setFromDate" placeholder="From"></app-date-picker>
         </div>
         <div class="col s12 m5">
-          <app-date-picker :value="toDate" :min="fromDate" :max="today" @input="setToDate" placeholder="To"/>
+          <app-date-picker :value="toDate" :min="fromDate" :max="today" @input="setToDate" placeholder="To"></app-date-picker>
         </div>
         <div class="col s12 m2">
           <a class="waves-effect waves-light btn" @click="loadData"><i class="material-icons left">loop</i>Refresh</a>
@@ -49,7 +49,7 @@
           </div>
 
           <div v-if="tweetsPerWeekday.length > 0">
-            <app-tweets-per-weekday/>
+            <app-tweets-per-weekday></app-tweets-per-weekday>
           </div>
         </div>
 
@@ -78,7 +78,7 @@
           </div>
 
           <div v-if="tweetsPerHour.length > 0">
-            <app-tweets-per-hour/>
+            <app-tweets-per-hour></app-tweets-per-hour>
           </div>
 
         </div>
@@ -112,6 +112,8 @@
               <!-- Modal Trigger -->
               <a class="waves-effect waves-light btn" ref="modalTrigger">Show list</a>
 
+              <hr>
+
               <div class="tagcloud" ref="tagcloud"></div>
 
               <!-- Modal Structure -->
@@ -121,15 +123,15 @@
                   <table class="striped taglist">
                     <thead>
                       <tr>
-                        <th>#</th>
+                        <th class="min"></th>
                         <th>Text</th>
-                        <th>Occurrence</th>
+                        <th class="min">#</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="(hashTag, index) in mostUsedHashTags">
+                      <tr v-for="(hashTag, index) in mostUsedHashTags" :key="hashTag">
                         <td>{{ index + 1 }}</td>
-                        <td>{{ hashTag.text }}</td>
+                        <td >{{ hashTag.text }}</td>
                         <td>{{ hashTag.count }}</td>
                       </tr>
                     </tbody>
@@ -155,6 +157,14 @@
 table.taglist > tbody > tr > td:first-of-type + td {
   word-wrap: break-word;
   word-break: break-all;
+}
+
+.min {
+  width: 0%;
+}
+
+.max {
+  width: 100%;
 }
 </style>
 

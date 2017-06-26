@@ -47,7 +47,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="(repo, index) in repos">
+                <tr v-for="(repo, index) in repos" :key="repo">
                   <td>{{ repo.name }}</td>
                   <td>{{ repo.description }}</td>
                   <td>{{ repo.updated_at | date }} </td>

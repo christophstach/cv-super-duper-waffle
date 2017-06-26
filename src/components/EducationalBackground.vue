@@ -2,7 +2,7 @@
   <div class="app-educational-background">
     <h3>Educational background</h3>
 
-    <div class="row" v-for="e in educationalBackground">
+    <div class="row" v-for="e in educationalBackground" :key="e">
       <div class="col s12 m3">
         <strong>
           <span>{{ e.startDate | date('MMM YYYY') }}</span>

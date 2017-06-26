@@ -6,16 +6,16 @@
       <div class="row">
         <div class="col s12">
 
-          <app-work-experience/>
+          <app-work-experience></app-work-experience>
           <div class="divider"></div>
 
-          <app-educational-background/>
+          <app-educational-background></app-educational-background>
           <div class="divider"></div>
 
-          <app-certificates/>
+          <app-certificates></app-certificates>
           <div class="divider"></div>
 
-          <app-additional-skills/>
+          <app-additional-skills></app-additional-skills>
 
         </div>
       </div>

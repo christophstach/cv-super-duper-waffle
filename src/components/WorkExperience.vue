@@ -2,7 +2,7 @@
   <div class="app-work-experience">
     <h3>Work experience</h3>
 
-    <div class="row" v-for="w in workExperience">
+    <div class="row" v-for="w in workExperience" :key="w">
       <div class="col s12 m3">
         <strong>
           <span>{{ w.startDate | date('MMM YYYY') }}</span>
@@ -14,7 +14,7 @@
       <div class="col s12 m9">
         <strong>{{ w.employer }}, {{ w.location }}</strong>
         <ul class="browser-default" v-if="w.responsibilities && w.responsibilities.length > 0">
-          <li v-for="responsibility in w.responsibilities">{{ responsibility }}</li>
+          <li v-for="responsibility in w.responsibilities" :key="responsibility">{{ responsibility }}</li>
         </ul>
       </div>
     </div>
