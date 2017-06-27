@@ -4,7 +4,7 @@
       type="text"
       class="daterange"
       placeholder="DateRange"
-    />
+    >
     <pre>{{ value }}</pre>
   </div>
 </template>
