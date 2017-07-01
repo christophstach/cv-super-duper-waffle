@@ -1,16 +1,12 @@
-let yesterday = new Date()
-let oneWeekAgo = new Date()
-yesterday.setDate(new Date().getDate() - 1)
-yesterday.setHours(0)
-yesterday.setMinutes(0)
-yesterday.setSeconds(0)
-yesterday.setMilliseconds(0)
+import moment from 'moment-timezone'
 
-oneWeekAgo.setDate(yesterday.getDate() - 6)
-oneWeekAgo.setHours(0)
-oneWeekAgo.setMinutes(0)
-oneWeekAgo.setSeconds(0)
-oneWeekAgo.setMilliseconds(0)
+// let yesterday = moment({hour: 0, minute: 0, seconds: 0, milliseconds: 0}).tz('UTC')
+// let oneWeekAgo = moment({hour: 0, minute: 0, seconds: 0, milliseconds: 0}).tz('UTC')
+let yesterday = moment({hour: 0, minute: 0, seconds: 0, milliseconds: 0}).tz('Europe/Berlin')
+let oneWeekAgo = moment({hour: 0, minute: 0, seconds: 0, milliseconds: 0}).tz('Europe/Berlin')
+
+oneWeekAgo.subtract(6, 'day')
+yesterday.subtract(1, 'millisecond')
 
 export default [
   {
@@ -20,8 +16,8 @@ export default [
     description: 'A project we are currently doing at university. It shows different analyses about Twitter.',
     link: '/projects/twitter/',
     data: {
-      fromDate: oneWeekAgo,
-      toDate: yesterday,
+      fromDate: oneWeekAgo.toDate(),
+      toDate: yesterday.toDate(),
       tweetsPerHour: [],
       tweetsPerWeekday: [],
       mostUsedHashTags: []
