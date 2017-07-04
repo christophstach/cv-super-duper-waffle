@@ -1,6 +1,6 @@
 <template>
   <div class="app-work-experience">
-    <h3>Work experience</h3>
+    <h3>Work Experience</h3>
 
     <div class="row" v-for="w in workExperience" :key="w">
       <div class="col s12 m3">

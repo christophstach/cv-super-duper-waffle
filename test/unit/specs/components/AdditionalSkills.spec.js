@@ -10,6 +10,6 @@ describe('AdditionalSkills.vue', () => {
       components: { AppAdditionalSkills }
     }).$mount()
 
-    expect(vm.$el.querySelector('.app-additional-skills > h3').textContent).to.equal('Additional skills')
+    expect(vm.$el.querySelector('.app-additional-skills > h3').textContent).to.equal('Additional Skills')
   })
 })

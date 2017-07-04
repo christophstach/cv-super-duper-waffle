@@ -11,6 +11,6 @@ describe('EducationalBackground.vue', () => {
       components: { AppEducationalBackground }
     }).$mount()
 
-    expect(vm.$el.querySelector('.app-educational-background > h3').textContent).to.equal('Educational background')
+    expect(vm.$el.querySelector('.app-educational-background > h3').textContent).to.equal('Educational Background')
   })
 })

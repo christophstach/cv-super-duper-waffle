@@ -1,6 +1,6 @@
 <template>
   <div class="app-educational-background">
-    <h3>Educational background</h3>
+    <h3>Educational Background</h3>
 
     <div class="row" v-for="e in educationalBackground" :key="e">
       <div class="col s12 m3">

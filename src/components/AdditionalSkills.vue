@@ -1,6 +1,6 @@
 <template>
   <div class="app-additional-skills">
-    <h3>Additional skills</h3>
+    <h3>Additional Skills</h3>
 
     <div class="row" v-for="a in additionalSkills" :key="a">
       <div class="col s12 m3">

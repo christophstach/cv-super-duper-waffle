@@ -11,6 +11,6 @@ describe('WorkExperience.vue', () => {
       components: { AppWorkExperience }
     }).$mount()
 
-    expect(vm.$el.querySelector('.app-work-experience > h3').textContent).to.equal('Work experience')
+    expect(vm.$el.querySelector('.app-work-experience > h3').textContent).to.equal('Work Experience')
   })
 })
