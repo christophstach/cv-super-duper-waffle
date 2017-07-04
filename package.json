@@ -109,5 +109,8 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": "build/build.js",
+  "repository": "https://github.com/christophstach/super-duper-waffle.git",
+  "license": "MIT"
 }
