@@ -20,6 +20,12 @@ test:
   override:
     - yarn test
 
+deployment:
+  production:
+    branch: master
+    commands:
+    - npm run deploy
+
 machine:
   node:
     version: 6.11.0
