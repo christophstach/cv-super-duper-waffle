@@ -5,6 +5,9 @@ machine:
 dependencies:
   override:
     - yarn
+    - wget https://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip
+    - unzip chromedriver_linux64.zip
+    - sudo cp chromedriver /usr/local/bin/chromedriver
   cache_directories:
     - ~/.cache/yarn
 
