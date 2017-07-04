@@ -56,7 +56,7 @@ export default Bar.extend({
         moment('1988-02-18').format('ddd'), // Thursday
         moment('1988-02-19').format('ddd'), // Friday
         moment('1988-02-20').format('ddd'), // Saturday
-        moment('1988-02-21').format('ddd')  // Sunday
+        moment('1988-02-21').format('ddd') // Sunday
       ]
     },
     datasets () {
