@@ -228,11 +228,11 @@ export default {
       setToDateMutation: 'SET_TWITTER_PROJECT_TO_DATE'
     }),
     setToDate (date) {
-      let mom = moment(date).endOf('day').tz('UTC')
+      let mom = moment(date).endOf('day')
       this.setToDateMutation(mom.toDate())
     },
     setFromDate (date) {
-      let mom = moment(date).startOf('day').tz('UTC')
+      let mom = moment(date).startOf('day')
       this.setFromDateMutation(mom.toDate())
     },
     loadData () {
