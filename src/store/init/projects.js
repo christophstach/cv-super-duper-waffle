@@ -1,9 +1,9 @@
 import moment from 'moment-timezone'
 
-let yesterday = moment().endOf('day').tz('UTC')
-let oneWeekAgo = moment().startOf('day').subtract(6, 'day').tz('UTC')
-// let yesterday = moment().tz('Europe/Berlin').endOf('day')
-// let oneWeekAgo = moment().tz('Europe/Berlin').startOf('day').subtract(6, 'day')
+// let fromDate = moment().endOf('day').substract(1, 'day').tz('UTC')
+// let toDate = moment().startOf('day').subtract(7, 'day').tz('UTC')
+let fromDate = moment().endOf('day').tz('UTC')
+let toDate = moment().startOf('day').tz('UTC')
 
 export default [
   {
@@ -13,8 +13,8 @@ export default [
     description: 'A project we are currently doing at university. It shows different analyses about Twitter.',
     link: '/projects/twitter/',
     data: {
-      fromDate: oneWeekAgo.toDate(),
-      toDate: yesterday.toDate(),
+      fromDate: fromDate.toDate(),
+      toDate: toDate.toDate(),
       tweetsPerHour: [],
       tweetsPerWeekday: [],
       mostUsedHashTags: []
