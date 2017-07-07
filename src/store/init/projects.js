@@ -1,12 +1,9 @@
 import moment from 'moment-timezone'
 
-// let yesterday = moment({hour: 0, minute: 0, seconds: 0, milliseconds: 0}).tz('UTC')
-// let oneWeekAgo = moment({hour: 0, minute: 0, seconds: 0, milliseconds: 0}).tz('UTC')
-let yesterday = moment({hour: 0, minute: 0, seconds: 0, milliseconds: 0}).tz('Europe/Berlin')
-let oneWeekAgo = moment({hour: 0, minute: 0, seconds: 0, milliseconds: 0}).tz('Europe/Berlin')
-
-oneWeekAgo.subtract(6, 'day')
-yesterday.subtract(1, 'millisecond')
+let yesterday = moment().endOf('day').tz('UTC')
+let oneWeekAgo = moment().startOf('day').subtract(6, 'day').tz('UTC')
+// let yesterday = moment().tz('Europe/Berlin').endOf('day')
+// let oneWeekAgo = moment().tz('Europe/Berlin').startOf('day').subtract(6, 'day')
 
 export default [
   {

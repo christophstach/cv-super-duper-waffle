@@ -171,6 +171,7 @@ table.taglist > tbody > tr > td:first-of-type + td {
 <script>
 import { mapState, mapActions, mapMutations, mapGetters } from 'vuex'
 import $ from 'jquery'
+import moment from 'moment-timezone'
 import 'jqcloud2/dist/jqcloud'
 import 'jqcloud2/dist/jqcloud.css'
 import AppTweetsPerWeekday from '@/components/charts/TweetsPerWeekday'
@@ -223,9 +224,17 @@ export default {
       clearMostUsedHashTags: 'CLEAR_MOST_USED_HASH_TAGS',
       clearTweetsPerHour: 'CLEAR_TWEETS_PER_HOUR',
       clearTweetsPerWeekday: 'CLEAR_TWEETS_PER_WEEKDAY',
-      setFromDate: 'SET_TWITTER_PROJECT_FROM_DATE',
-      setToDate: 'SET_TWITTER_PROJECT_TO_DATE'
+      setFromDateMutation: 'SET_TWITTER_PROJECT_FROM_DATE',
+      setToDateMutation: 'SET_TWITTER_PROJECT_TO_DATE'
     }),
+    setToDate (date) {
+      let mom = moment(date).endOf('day').tz('UTC')
+      this.setToDateMutation(mom.toDate())
+    },
+    setFromDate (date) {
+      let mom = moment(date).startOf('day').tz('UTC')
+      this.setFromDateMutation(mom.toDate())
+    },
     loadData () {
       this.clearMostUsedHashTags()
       this.fetchMostUsedHashTags({ fromDate: this.fromDate, toDate: this.toDate }).then(() => {
