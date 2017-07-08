@@ -1,9 +1,7 @@
 import moment from 'moment-timezone'
 
-// let fromDate = moment().endOf('day').substract(1, 'day').tz('UTC')
-// let toDate = moment().startOf('day').subtract(7, 'day').tz('UTC')
-let fromDate = moment().endOf('day')
-let toDate = moment().startOf('day')
+let fromDate = moment().startOf('day')
+let toDate = moment().endOf('day')
 
 export default [
   {

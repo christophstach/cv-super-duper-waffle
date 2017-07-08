@@ -227,13 +227,13 @@ export default {
       setFromDateMutation: 'SET_TWITTER_PROJECT_FROM_DATE',
       setToDateMutation: 'SET_TWITTER_PROJECT_TO_DATE'
     }),
-    setToDate (date) {
-      let mom = moment(date).endOf('day')
-      this.setToDateMutation(mom.toDate())
-    },
     setFromDate (date) {
       let mom = moment(date).startOf('day')
       this.setFromDateMutation(mom.toDate())
+    },
+    setToDate (date) {
+      let mom = moment(date).endOf('day')
+      this.setToDateMutation(mom.toDate())
     },
     loadData () {
       this.clearMostUsedHashTags()
