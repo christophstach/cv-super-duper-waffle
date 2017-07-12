@@ -183,10 +183,10 @@
                 <td>
                   <span v-for="(hashTag, htIndex) in day.hashTagOccurrence" :key="hashTag">
                     <span v-if="htIndex < day.hashTagOccurrence.length - 1">
-                      <a :href="'https://twitter.com/hashtag/' + hashTag.text">#{{ hashTag.text }}</a>,
+                      <a :href="'https://twitter.com/hashtag/' + hashTag.text">{{ hashTag.text }}</a>,
                     </span>
                     <span v-if="htIndex == day.hashTagOccurrence.length - 1">
-                      <a :href="'https://twitter.com/hashtag/' + hashTag.text">#{{ hashTag.text }}</a>
+                      <a :href="'https://twitter.com/hashtag/' + hashTag.text">{{ hashTag.text }}</a>
                     </span>
                   </span>
                 </td>
@@ -231,10 +231,10 @@
                 <td>
                   <span v-for="(hashTag, htIndex) in week.hashTagOccurrence" :key="hashTag">
                     <span v-if="htIndex < week.hashTagOccurrence.length - 1">
-                      <a :href="'https://twitter.com/hashtag/' + hashTag.text">#{{ hashTag.text }}</a>,
+                      <a :href="'https://twitter.com/hashtag/' + hashTag.text">{{ hashTag.text }}</a>,
                     </span>
                     <span v-if="htIndex == week.hashTagOccurrence.length - 1">
-                      <a :href="'https://twitter.com/hashtag/' + hashTag.text">#{{ hashTag.text }}</a>
+                      <a :href="'https://twitter.com/hashtag/' + hashTag.text">{{ hashTag.text }}</a>
                     </span>
                   </span>
                 </td>
