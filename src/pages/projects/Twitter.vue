@@ -131,7 +131,7 @@
                     <tbody>
                       <tr v-for="(hashTag, index) in mostUsedHashTags" :key="hashTag">
                         <td>{{ index + 1 }}</td>
-                        <td >{{ hashTag.text }}</td>
+                        <td>{{ hashTag.text }}</td>
                         <td>{{ hashTag.count }}</td>
                       </tr>
                     </tbody>
@@ -145,6 +145,102 @@
 
           </div>
 
+        </div>
+      </section>
+
+      <section class="row">
+        <div class="col s12">
+          <h4>Relevant hashtags daily</h4>
+
+          <div v-if="!relevantHashTagsDaily">
+            <div key="preloader" class="center-align">
+              <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <table v-if="relevantHashTagsDaily" class="striped">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Hashtags</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(day, index) in relevantHashTagsDaily" :key="day">
+                <td>{{ day.from | date('DD.MM.YYYY') }}</td>
+                <td>
+                  <span v-for="(hashTag, htIndex) in day.hashTagOccurrence" :key="hashTag">
+                    <span v-if="htIndex < day.hashTagOccurrence.length - 1">
+                      <a :href="'https://twitter.com/hashtag/' + hashTag.text">#{{ hashTag.text }}</a>,
+                    </span>
+                    <span v-if="htIndex == day.hashTagOccurrence.length - 1">
+                      <a :href="'https://twitter.com/hashtag/' + hashTag.text">#{{ hashTag.text }}</a>
+                    </span>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="row">
+        <div class="col s12">
+          <h4>Relevant hashtags weekly</h4>
+
+          <div v-if="!relevantHashTagsWeekly">
+            <div key="preloader" class="center-align">
+              <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <table v-if="relevantHashTagsWeekly" class="striped">
+            <thead>
+              <tr>
+                <th>Week</th>
+                <th>Hashtags</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(week, index) in relevantHashTagsWeekly" :key="week">
+                <td>{{ week.from | date('DD.MM.YYYY') }} - {{ week.to | date('DD.MM.YYYY') }}</td>
+                <td>
+                  <span v-for="(hashTag, htIndex) in week.hashTagOccurrence" :key="hashTag">
+                    <span v-if="htIndex < week.hashTagOccurrence.length - 1">
+                      <a :href="'https://twitter.com/hashtag/' + hashTag.text">#{{ hashTag.text }}</a>,
+                    </span>
+                    <span v-if="htIndex == week.hashTagOccurrence.length - 1">
+                      <a :href="'https://twitter.com/hashtag/' + hashTag.text">#{{ hashTag.text }}</a>
+                    </span>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -171,6 +267,7 @@ table.taglist > tbody > tr > td:first-of-type + td {
 <script>
 import { mapState, mapActions, mapMutations, mapGetters } from 'vuex'
 import $ from 'jquery'
+import axios from 'axios'
 import moment from 'moment-timezone'
 import 'jqcloud2/dist/jqcloud'
 import 'jqcloud2/dist/jqcloud.css'
@@ -196,6 +293,12 @@ export default {
   destroyed () {
     this.clearMostUsedHashTags()
   },
+  data () {
+    return {
+      relevantHashTagsDaily: false,
+      relevantHashTagsWeekly: false
+    }
+  },
   computed: {
     ...mapState(['projects']),
     ...mapGetters({
@@ -208,14 +311,8 @@ export default {
       toDate: 'twitterProjectToDate'
     }),
     today () {
-      let date = new Date()
-      date.setDate(new Date().getDate())
-      date.setHours(0)
-      date.setMinutes(0)
-      date.setSeconds(0)
-      date.setMilliseconds(0)
-
-      return date
+      let mom = moment().startOf('day')
+      return mom.toDate()
     }
   },
   methods: {
@@ -256,6 +353,14 @@ export default {
       this.clearTweetsPerWeekday()
       this.fetchTweetsPerWeekday({ fromDate: this.fromDate, toDate: this.toDate }).then(() => {
 
+      })
+
+      axios.get('http://broccoli.f4.htw-berlin.de:8080/twitter/relevant-hash-tags-daily').then((response) => {
+        this.relevantHashTagsDaily = response.data
+      })
+
+      axios.get('http://broccoli.f4.htw-berlin.de:8080/twitter/relevant-hash-tags-weekly').then((response) => {
+        this.relevantHashTagsWeekly = response.data
       })
     }
   }
